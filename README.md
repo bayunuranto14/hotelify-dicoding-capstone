@@ -1,4 +1,4 @@
-# Hotelify : Aplikasi Pemesanan Tiket Hotel secara online
+# Hotelify : Aplikasi Pemesanan Tiket Hotel
 Final Capstone Project Dicoding mengenai Aplikasi Pemesanan Tiket Hotel
 
 ### Member of Project
