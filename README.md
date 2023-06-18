@@ -1,3 +1,18 @@
+# Hotelify : Aplikasi Pemesanan Tiket Hotel
+Final Capstone Project Dicoding mengenai Aplikasi Pemesanan Tiket Hotel
+
+### Member of Project
+- F013XB364 – Muhammad Ahadiyas Hatumena
+- F047XB426 – Luthfi Rusmahadi
+- F025XB033 – Bobby Arsanto Putro
+- F058XB337 – Bayu Afif Nuranto
+
+
+
+
+=================================================================================================================
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
