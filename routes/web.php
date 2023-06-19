@@ -10,7 +10,6 @@ use App\Http\Controllers\Front\VideoController;
 use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\Front\TermsController;
 use App\Http\Controllers\Front\PrivacyController;
-use App\Http\Controllers\Front\SubscriberController;
 use App\Http\Controllers\Front\RoomController;
 use App\Http\Controllers\Front\BookingController;
 
@@ -27,7 +26,6 @@ use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminVideoController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPageController;
-use App\Http\Controllers\Admin\AdminSubscriberController;
 use App\Http\Controllers\Admin\AdminFacilityController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminSettingController;
@@ -79,10 +77,6 @@ Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privac
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::post('/contact/send-email', [ContactController::class, 'send_email'])->name('contact_send_email');
-
-Route::post('/subscriber/send-email', [SubscriberController::class, 'send_email'])->name('subscriber_send_email');
-
-Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
 
 Route::get('/room', [RoomController::class, 'index'])->name('room');
 
@@ -395,15 +389,6 @@ Route::group(['middleware' => ['admin:admin']],function(){
     Route::get('/admin/page/reset-password', [AdminPageController::class, 'reset_password'])->name('admin_page_reset_password');
 
     Route::post('/admin/page/reset-password/update', [AdminPageController::class, 'reset_password_update'])->name('admin_page_reset_password_update');
-
-
-    //route subscriber
-
-    Route::get('/admin/subscriber/show', [AdminSubscriberController::class, 'show'])->name('admin_subscriber_show');
-
-    Route::get('/admin/subscriber/send-email', [AdminSubscriberController::class, 'send_email'])->name('admin_subscriber_send_email');
-
-    Route::post('/admin/subscriber/send-email-submit', [AdminSubscriberController::class, 'send_email_submit'])->name('admin_subscriber_send_email_submit');
 
 
     //route facility 
