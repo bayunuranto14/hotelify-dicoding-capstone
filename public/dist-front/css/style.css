@@ -37,10 +37,10 @@ p {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-	background-color: #e75542;
+	background-color: #FF9494;
 }
 .primary-color {
-	color: #e75542;
+	color: #FF9494;
 }
 .primary-color:hover {
 	color: #333;
@@ -54,8 +54,8 @@ select {
 /* Top */
 .top {
 	min-height: 40px;
-	background: #24AB70;
-	color: #eaeaea;
+	background: #FF9494;
+	color: #222;
 	font-size: 14px;
 }
 .top ul {
@@ -72,7 +72,7 @@ select {
 	padding-left: 16px;
 }
 .top ul li a {
-	color: #eaeaea;
+	color: #222;
 }
 .top ul li.phone-text:before {
 	content: "\f2a0";
@@ -513,7 +513,7 @@ select {
 	font-size: 18px;
 }
 .home-rooms .inner .text h2 a {
-	color: #333;
+	color: #222;
 }
 .home-rooms .inner .text .price {
 	color: #e75542;
@@ -521,8 +521,8 @@ select {
 	font-weight: 700;
 }
 .home-rooms .inner .text .button a {
-	background: #ffe7e2;
-	color: #e75542;
+	background: #FF9494;
+	color: #222;
 	border: 0;
 	font-size: 16px;
 	width: 100%;
@@ -589,8 +589,8 @@ select {
 
 /* Footer */
 .footer {
-	background: #363636;
-	color: #fff;
+	background: #FFE3E1;
+	color: #222;
 	padding-top: 40px;
 	padding-bottom: 20px;
 }
@@ -644,7 +644,7 @@ select {
 	margin-bottom: 6px;
 }
 .footer ul.social li a {
-	color: #fff;
+	color: #222;
 	background: #e75542;
 	width: 30px;
 	height: 30px;
@@ -671,7 +671,7 @@ select {
 	left: 0;
 }
 .footer ul.useful-links li a {
-	color: #fff;
+	color: #222;
 }
 
 /* Copyright */
@@ -694,7 +694,7 @@ select {
 .page-top h2 {
 	position: relative;
 	z-index: 99;
-	color: #fff;
+	color: #222;
 	opacity: 1;
 	text-align: center;
 }
@@ -704,7 +704,7 @@ select {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: #7d7d7d;
+	background: #FFE3E1;
 	color: #fff;
 	z-index: 99;
 }

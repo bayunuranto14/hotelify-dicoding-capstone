@@ -2,7 +2,7 @@
 
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
+        <a href="{{route('home')}}" class="logo">
             <img src="{{ asset('uploads/'.$global_setting_data->logo) }}" alt="">
         </a>
     </div>
@@ -37,23 +37,7 @@
                             </ul>
                         </li>
 
-                        @if($global_page_data->image_gallery_status == 1 || $global_page_data->video_gallery_status == 1)
-                        <li class="nav-item">
-                            <a href="javascript:void;" class="nav-link dropdown-toggle">Gallery</a>
-                            <ul class="dropdown-menu">
-                                @if($global_page_data->image_gallery_status == 1)
-                                <li class="nav-item">
-                                    <a href="{{ route('gallery') }}" class="nav-link">{{ $global_page_data->image_gallery_heading }}</a>
-                                </li>
-                                @endif
-                                @if($global_page_data->video_gallery_status == 1)
-                                <li class="nav-item">
-                                    <a href="{{ route('video') }}" class="nav-link">{{ $global_page_data->video_gallery_heading }}</a>
-                                </li>
-                                @endif
-                            </ul>
-                        </li>
-                        @endif
+                        
                         @if($global_page_data->blog_status == 1)
                         <li class="nav-item">
                             <a href="{{ route('blog') }}" class="nav-link">{{ $global_page_data->blog_heading }}</a>

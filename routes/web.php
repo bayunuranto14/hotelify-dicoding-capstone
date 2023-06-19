@@ -5,8 +5,6 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\BlogController; 
 use App\Http\Controllers\Front\ContactController; 
-use App\Http\Controllers\Front\GalleryController;
-use App\Http\Controllers\Front\VideoController;
 use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\Front\TermsController;
 use App\Http\Controllers\Front\PrivacyController;
@@ -23,7 +21,6 @@ use App\Http\Controllers\Admin\AdminFeatureController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminGalleryController;
-use App\Http\Controllers\Admin\AdminVideoController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminFacilityController;
@@ -47,6 +44,7 @@ use App\Http\Controllers\Customer\CustomerOrderController;
 |
 */
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -61,10 +59,6 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/post/{id}', [BlogController::class, 'details'])->name('blog_details');
 
 Route::get('/checkout', [BookingController::class, 'checkout'])->name('checkout');
-
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-
-Route::get('/video', [VideoController::class, 'index'])->name('video');
 
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
@@ -92,16 +86,11 @@ Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
 
 Route::get('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
 
-
 Route::get('/login', [CustomerAuthController::class, 'login'])->name('customer_login');
 
 Route::post('login-submit', [CustomerAuthController::class, 'login_submit'])->name('customer_login_submit');
 
 Route::get('/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
-
-// admin
-
-/* Admin */
 
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
 
@@ -117,17 +106,11 @@ Route::get('/admin/reset-password/{token}/{email}', [AdminLoginController::class
 
 Route::post('/admin/reset-password-submit', [AdminLoginController::class, 'reset_password_submit'])->name('admin_reset_password_submit');
 
-/* Customer */
-
-//route login
-
 Route::get('/login', [CustomerAuthController::class, 'login'])->name('customer_login');
 
 Route::post('login-submit', [CustomerAuthController::class, 'login_submit'])->name('customer_login_submit');
 
 Route::get('/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
-
-//route sign up
 
 Route::get('/signup', [CustomerAuthController::class, 'signup'])->name('customer_signup');
 
@@ -135,7 +118,6 @@ Route::post('/signup-submit', [CustomerAuthController::class, 'signup_submit'])-
 
 Route::get('/signup-verify/{email}/{token}', [CustomerAuthController::class, 'verify'])->name('customer_signup_verify');
 
-//route forget password
 
 Route::get('/forget-password', [CustomerAuthController::class, 'forget_password'])->name('customer_forget_password');
 
@@ -147,68 +129,33 @@ Route::post('/reset-password-submit', [CustomerAuthController::class, 'reset_pas
 
 
 
-/* Customer - Middleware */
-
-Route::group(['middleware' => ['customer:customer']],function(){
-
-    Route::get('/customer/home', [CustomerHomeController::class, 'index'])->name('customer_home');;
-
-    Route::get('/customer/edit-profile', [CustomerProfileController::class, 'index'])->name('customer_edit_profile');
-
-    Route::post('/customer/edit-profile-submit', [CustomerProfileController::class, 'profile_submit'])->name('customer_profile_submit');
-
-    Route::get('/customer/order/view', [CustomerOrderController::class, 'index'])->name('customer_order_view');
-
-    Route::get('/customer/invoice/{id}', [CustomerOrderController::class, 'Invoice'])->name('customer_invoice');
 
 
 
-
-
-
-
-});
-
-
-/* Admin - Middleware */
 Route::group(['middleware' => ['admin:admin']],function(){
-
-    //Route profile admin
 
     Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
 
     Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
 
-    //Route home admin
-
     Route::get('/admin', [AdminHomeController::class, 'index'])->name('admin_home');
 
-    //Route Setting
     Route::get('/admin/setting', [AdminSettingController::class, 'index'])->name('admin_setting');
 
     Route::post('/admin/setting/update', [AdminSettingController::class, 'update'])->name('admin_setting_update');
-
-    //Route Datewise
 
     Route::get('/admin/datewise-rooms', [AdminDatewiseRoomController::class, 'index'])->name('admin_datewise_rooms');
 
     Route::post('/admin/datewise-rooms/submit', [AdminDatewiseRoomController::class, 'show'])->name('admin_datewise_rooms_submit');
 
-    //Route Customer
-
     Route::get('/admin/customer', [AdminCustomerController::class, 'index'])->name('admin_customer');
 
     Route::get('/admin/customer/change-status/{id}', [AdminCustomerController::class, 'change_status'])->name('admin_customer_change_status');
 
-    //Route Orders
-
     Route::get('/admin/order/view', [AdminOrderController::class, 'index'])->name('admin_orders');
-
-    Route::get('/admin/order/invoice/{id}', [AdminOrderController::class, 'Invoice'])->name('admin_invoice');
 
     Route::get('/admin/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('admin_order_delete');
 
-    //Route slide
 
     Route::get('/admin/slide/view', [AdminSlideController::class, 'index'])->name('admin_slide_view');
 
@@ -277,20 +224,6 @@ Route::group(['middleware' => ['admin:admin']],function(){
     Route::post('/admin/gallery/update/{id}', [AdminGalleryController::class, 'update'])->name('admin_gallery_update');
 
     Route::get('/admin/gallery/delete/{id}', [AdminGalleryController::class, 'delete'])->name('admin_gallery_delete');
-
-    //Route Video
-
-    Route::get('/admin/video/view', [AdminVideoController::class, 'index'])->name('admin_video_view');
-
-    Route::get('/admin/video/add', [AdminVideoController::class, 'add'])->name('admin_video_add');
-
-    Route::post('/admin/video/store', [AdminVideoController::class, 'store'])->name('admin_video_store');
-
-    Route::get('/admin/video/edit/{id}', [AdminVideoController::class, 'edit'])->name('admin_video_edit');
-
-    Route::post('/admin/video/update/{id}', [AdminVideoController::class, 'update'])->name('admin_video_update');
-
-    Route::get('/admin/video/delete/{id}', [AdminVideoController::class, 'delete'])->name('admin_video_delete');
 
     //Route Faq
 

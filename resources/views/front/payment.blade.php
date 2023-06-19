@@ -2,8 +2,6 @@
 
 @section('main_content')
 
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
 <div class="page-top">
     <div class="bg"></div>
     <div class="container">

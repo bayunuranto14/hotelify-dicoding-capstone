@@ -112,7 +112,7 @@
                             <li class="menu"><a href="{{ route('checkout') }}">{{ $global_page_data->checkout_heading }}</a></li>
                             @endif
 
-                            {{-- @if(!Auth::guard('customer')->check())
+                            @if(!Auth::guard('customer')->check())
                                 @if($global_page_data->signup_status == 1)
                                 <li class="menu"><a href="{{ route('customer_signup') }}">{{ $global_page_data->signup_heading }}</a></li>
                                 @endif
@@ -121,9 +121,8 @@
                                 <li class="menu"><a href="{{ route('customer_login') }}">{{ $global_page_data->signin_heading }}</a></li>
                                 @endif
                             @else
-                                <li class="menu"><a href="{{ route('customer_home') }}">Dashboard</a></li>
                                 <li class="menu"><a href="{{ route('customer_logout') }}">Logout</a></li>
-                            @endif --}}
+                            @endif
                         </ul>
                     </div>
                 </div>

@@ -5,12 +5,6 @@
                 <div class="item">
                     <h2 class="heading">Site Links</h2>
                     <ul class="useful-links">
-                        @if($global_page_data->image_gallery_status == 1)
-                        <li><a href="{{ route('gallery') }}">{{ $global_page_data->image_gallery_heading }}</a></li>
-                        @endif
-                        @if($global_page_data->video_gallery_status == 1)
-                        <li><a href="{{ route('video') }}">{{ $global_page_data->video_gallery_heading }}</a></li>
-                        @endif
                         @if($global_page_data->blog_status == 1)
                         <li><a href="{{ route('blog') }}">{{ $global_page_data->blog_heading }}</a></li>
                         @endif

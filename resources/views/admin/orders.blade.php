@@ -29,7 +29,6 @@
                                     <td>{{ $row->booking_date }}</td>
                                     <td>$ {{ $row->paid_amount }}</td>
                                     <td class="pt_10 pb_10">
-                                        <a href="{{ route('admin_invoice',$row->id) }}" class="btn btn-primary">Detail</a>
                                         <a href="{{ route('admin_order_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
                                     </td>
                                 </tr>

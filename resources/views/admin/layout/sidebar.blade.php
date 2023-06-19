@@ -35,9 +35,7 @@
                     
                     <li class="{{ Request::is('admin/page/contact') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_page_contact') }}"><i class="fa fa-angle-right"></i> Contact</a></li>
 
-                    <li class="{{ Request::is('admin/page/image-gallery') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_page_image_gallery') }}"><i class="fa fa-angle-right"></i> Image Gallery</a></li>
-
-                    <li class="{{ Request::is('admin/page/video-gallery') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_page_video_gallery') }}"><i class="fa fa-angle-right"></i> Video Gallery</a></li>
+                  
 
                     <li class="{{ Request::is('admin/page/faq') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_page_faq') }}"><i class="fa fa-angle-right"></i> FAQ</a></li>
 
@@ -77,10 +75,6 @@
             <li class="{{ Request::is('admin/testimonial/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_testimonial_view') }}"><i class="fas fa-comments"></i><span>Testimonial</span></a></li>
 
             <li class="{{ Request::is('admin/post/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_post_view') }}"><i class="fas fa-blog"></i><span>Post</span></a></li>
-
-            <li class="{{ Request::is('admin/gallery/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_gallery_view') }}"><i class="fas fa-image"></i><span>Image Gallery</span></a></li>
-
-            <li class="{{ Request::is('admin/video/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_video_view') }}"><i class="fas fa-photo-video"></i><span>Video Gallery</span></a></li>
 
             <li class="{{ Request::is('admin/faq/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_faq_view') }}"><i class="fas fa-question-circle"></i></i><span>FAQ</span></a></li>
 
