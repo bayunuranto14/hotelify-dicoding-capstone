@@ -6,6 +6,13 @@ use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\BlogController; 
 use App\Http\Controllers\Front\ContactController; 
 use App\Http\Controllers\Front\GalleryController;
+use App\Http\Controllers\Front\VideoController;
+use App\Http\Controllers\Front\FaqController;
+use App\Http\Controllers\Front\TermsController;
+use App\Http\Controllers\Front\PrivacyController;
+use App\Http\Controllers\Front\SubscriberController;
+use App\Http\Controllers\Front\RoomController;
+use App\Http\Controllers\Front\BookingController;
 
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminCustomerController;
@@ -31,7 +38,6 @@ use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Customer\CustomerHomeController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\Customer\CustomerOrderController;
-use App\Http\Controllers\Front\RoomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
